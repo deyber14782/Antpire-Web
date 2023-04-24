@@ -13,18 +13,19 @@
   <button></button>
   <h1>¡Empecemos!</h1>
   <img>
-  <form>
-    <input type="text" placeholder="Nombres">
-    <input type="text" placeholder="Apellidos">
-    <input type="number" placeholder="Edad">
-    <input type="numbre" placeholder="Sueldo">
-    <input type="text" placeholder="Email">
-    <input type="text" placeholder="Contraseña">
-    <input type="text" placeholder="Confirmar contraseña">
-    <select>
-      <option value="1">Semanal</option>
-      <option value="2">Quincenal</option>
-      <option value="3">Mensual</option>
+  <form action="/new-user" method="POST">
+    <input type="text" placeholder="Nombres" name="names">
+    <input type="text" placeholder="Apellidos" name="lastNames">
+    <input type="number" placeholder="Edad" name="age">
+    <input type="numbre" placeholder="Sueldo" name="salary">
+    <input type="text" placeholder="Email" name="email">
+    <input type="text" placeholder="Contraseña" name="password">
+    <input type="text" placeholder="Confirmar contraseña" name="confirmPassword">
+    <select name="frequencySalary">
+      <option value="0">Seleccione una opción</option>
+      <option value="Semanal">Semanal</option>
+      <option value="Quincenal">Quincenal</option>
+      <option value="Mensual">Mensual</option>
     </select>
     <button>Continuar</button>
   </form>

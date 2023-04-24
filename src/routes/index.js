@@ -3,16 +3,27 @@ const {db}=require('../firebase')
 
 const router=Router()
 
-router.get('/', async(req, res) => {
-    const querySnapshot=await db.collection('Users').doc('22m38pV2Z1e2c63aNtyG').collection('Private_Data').doc('IPJDrSo4BbuYAePLYI5d').get()
+router.get('/Users', async(req, res) => {
+    const querySnapshot=await db.collection('Prueba').get()
 
-    console.log(querySnapshot.data())
+    console.log(querySnapshot.docs[0].data())
     res.send('Hello World')
 })
 
-router.post('/new-user', (req, res) => {
+router.post('/new-user', async (req, res) => {
 
-    const{names, lastnames, email, age, salary, frequencySalary}=req.body
+    const{names, lastNames, email, age, salary, frequencySalary}=req.body
+
+    await db.collection('Prueba').add({
+        names,
+        lastNames,
+        email,
+        age,
+        salary,
+        frequencySalary
+    })
+
+    res.send('Nuevo usuario creado')
 })
 
 module.exports=router
